@@ -3,24 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta author="Tatjana Markovic"/>
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  <title></title>
+  <title>Dev Finder | Search GitHub Users </title>
 </head>
 <body>
+  <div class="container">
+    <header> 
+      <div class="title">devfinder</div>
+      <button class="theme theme--light">
+        Light
+        <img src="./assets/icon-sun.svg" alt="sun"/>
+      </button>
+      <button class="theme theme--dark">
+        Dark
+        <img src="./assets/icon-moon.svg" alt="moon"/>
+      </button>
+    </header>
 
-  devfinder
+    <section class="search">
+      <img class="search__img" src="./assets/icon-search.svg" alt="magnifying glass"/>
+      <input type="search" name="search" class="search__input" placeholder="Search GitHub username..."/>
+      <span class="search__result"></span>
+      <button class="search-btn">Search</button>
+    </section>
 
-  Light
-  Dark
+    <main >
+      <img class="user__img" src="./assets/octocat.png" alt="user octocat">
+      <header class="user">        
+        <div class="user__data">
+          <h1 class="user__name">The Octocat</h1>
+          <p class="user__login">@octocat</p>
+        </div>
+        <p class="user__joined">Joined <span class="user__date">25 Jan 2011</span></p>
+      </header> 
 
-  Search GitHub username...
-  Search
+      <article class="user__bio">This profile has mo bio</article>
 
-  Joined
+      <div class="user__statistics">
+        <div class="user__item user__item--repos">
+          <h3>Repos</h3>
+          <h2 class="user__quantity">8</h2>
+        </div>
+        <div class="user__item user__item--followers">
+          <h3>Followers</h3>
+          <h2 class="user__quantity">3938</h2>
+        </div>
+        <div class="user__item user__item--following">
+          <h3>Following</h3>
+          <h2 class="user__quantity">9</h2>
+        </div>
+      </div>
 
-  Repos
-  Followers
-  Following
+      <footer class="user__social-container">
+        <div class="user__social">
+          <img src="./assets/icon-location.svg" alt="location ">
+          <p>Sab Francisco</p>
+        </div>
+        <div class="user__social">
+          <img src="./assets/icon-twitter.svg" alt="twitter ">
+          <p>Not Available</p>
+        </div>
+        <div class="user__social">
+          <img src="./assets/icon-website.svg" alt="web site ">
+          <p>https://github.blog</p>
+        </div>
+        <div class="user__social">
+          <img src="./assets/icon-company.svg" alt="buildings ">
+          <p>@github</p>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  
+  
+  
+  
+  
+  
 
 </body>
 </html>
