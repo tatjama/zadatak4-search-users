@@ -1,0 +1,46 @@
+:root{
+    --primary-blue: #0079FF;
+    --primary-dark-blue:#4B6A9B;
+    --primary-light-blue: #F6F8FF;
+    --primary-gray: #697C9A;
+    --primary-dark-gray: #2B3442;
+    --primary-white: #FEFEFE;
+    
+    --secondary-dark-gray: #141d2f;
+    --secondary-white: #FFFFFF;
+    --secondary-gray: #1E2A47; 
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html{
+    font-family: 'Space Mono', monospace;
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 400;
+    position: relative;    
+}
+body {
+    background-color: var(--primary-light-blue);
+}
+h1{
+    font-size: 26px;
+    line-height: 38px;
+    font-weight: bold;
+}
+h2{
+    font-size: 22px;
+    line-height: 33px;
+    font-weight: bold;
+}
+h3{
+    font-size: 16px;
+    line-height: 24px;
+
+}
+h4{
+    font-size: 13px;
+    line-height: 20px;
+}
