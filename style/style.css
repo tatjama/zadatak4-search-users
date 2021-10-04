@@ -307,3 +307,69 @@ button{
         width:0;
     }
 }
+@media screen and (max-width: 600px){
+    body, html, h3{
+        font-size: 13px;
+        line-height: 19.25px;
+    }
+    h1{
+        font-size: 16px;
+        line-height: 23.7px;
+    }
+    h2{
+        font-size: 16px;
+        line-height: 23.7px;
+    }    
+    h4{
+        font-size:11px;
+        line-height: 16.29px;
+        margin-bottom: 8px;
+    }
+    .container{
+        width: 87%;
+    }
+    .search{
+        height: 60px;
+        margin: 36px 0 16px 0;
+    }
+    .search__img{
+        width: 20px;
+        height: 20px;
+        margin: 20px 9px 20px 16px;
+    }
+    .search__input::placeholder, .search__input{
+        font-size:13px;
+    }
+    .search__result--no{
+        font-size: 13px;
+        right: 90px;
+    }
+    .search__btn{
+        width: 84px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 21px;
+        padding: 12.5px;
+    }
+    .user-container{
+        padding: 10% 7% 15% 7%;
+    }
+    .user__left--first{
+        width: 90px;
+    }
+    .user__img{
+        width:70px;
+        height:70px
+    }
+    .user__bio{
+        font-size: 13px;
+        margin-top: 10px;
+    }
+    .user__status{
+        padding: 19px 15px;
+        margin-top: 23px;
+    }
+    .user-social__img{
+        margin-right: 13px;
+    }
+}
