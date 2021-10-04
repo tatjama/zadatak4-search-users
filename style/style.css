@@ -1,4 +1,4 @@
-:root{
+.light-mode{
     --primary-blue: #0079FF;
     --primary-blue-hover: #60ABFF;
     --primary-text:#4B6A9B;       
@@ -7,12 +7,20 @@
     --primary-background: #F6F8FF;
     --primary-background-light: #FEFEFE;
     --primary-text-error: #F74646;   
-    --primary-filter: brightness(100%);
-    --secondary-text: #FFFFFF;
-    --secondary-text-bold: #FFFFFF;
-    --secondary-text-neutral: #FFFFFF;
-    --secondary-background: #141d2f;
-    --secondary-background-light: #1E2A47; 
+    --primary-filter: brightness(100%);   
+    --primary-box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567); 
+}
+.dark-mode{
+    --primary-blue: #0079FF;
+    --primary-blue-hover: #60ABFF;
+    --primary-text: #FFFFFF;
+    --primary-text-neutral: #FFFFFF;
+    --primary-text-bold: #FFFFFF;
+    --primary-background: #141d2f;
+    --primary-background-light: #1E2A47;
+    --primary-text-error: #F74646;
+    --primary-filter: initial;
+    --primary-box-shadow: 0;
 }
 *{
     margin: 0;
@@ -119,39 +127,25 @@ button{
     flex-direction:row;
     justify-content:space-between;
     align-items: center;
-    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+    box-shadow: var(--primary-box-shadow);
     border-radius:15px;
     -webkit-border-radius:15px;
     -moz-border-radius:15px;
     -ms-border-radius:15px;
     -o-border-radius:15px;
 }
-.search__item{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.search__item--left{
-    width: 65%;
-
-}
-.search__item--right{
-    width: 35%;
-    justify-content: flex-end;
-}
-.search__img{
-    margin: 22px;
-}
 .search__input{
-    width: 400px;
-    height: 29px;
     padding: 2px;
+    padding-left: 45px;
+    margin: 22px;
     border: 0;
     outline: 0;
     font-size: 18px;
     line-height: 25px;
     color: var(--primary-text-bold);
     background-color: var(--primary-background-color);
+    background-image: url(../assets/icon-search.svg);
+    background-repeat: no-repeat;
     cursor: pointer;
 }
 .search__input::placeholder{
@@ -159,13 +153,19 @@ button{
     line-height: 25px;
     color: var(--primary-text);
 }
-.search__result--no{
-    width: 100px;
-    margin: 24px;
+.search__error{
     font-weight: bold;
     color: var(--primary-text-error);
-    float: right;
-    /*display: none;*/
+    position: absolute;
+}
+.search__error--no-result{
+    right: 140px;
+    display: none;
+}
+.search__error--message{
+    top: 120px;
+    left: 78px;
+    display: none;
 }
 .search__btn{
     width: 106px;
@@ -175,6 +175,9 @@ button{
     padding: 13px 24px;
     background-color: var(--primary-blue);
     color: white;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -189,7 +192,7 @@ button{
 .user-container{
     padding: 48px;
     background-color:var(--primary-background-light);
-    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+    box-shadow: var(--primary-box-shadow);
     border-radius:15px;
     -webkit-border-radius:15px;
     -moz-border-radius:15px;
@@ -256,10 +259,14 @@ button{
 .user-social__item{
     width:220px;
     padding-top: 14px;
-    cursor: pointer;
 }
 .user-social__a{
     color: var(--primary-text);
+    text-decoration: none;
+    cursor: pointer;
+}
+.user-social__a:hover{
+    text-decoration:underline;
 }
 .user-social__item--transparent{
     opacity: 0.5;
@@ -276,17 +283,6 @@ button{
 @media screen and (max-width:800px){
     .container{
         width: 75%;        
-    }
-    .search__item--left{
-        width: 75%;
-    }
-    .search__input{
-        width: 75%;
-    }
-    .search__result--no{
-        margin: 0;
-        position: absolute;
-        right: 120px;
     }
     .user-container{
         padding: 7%;
@@ -330,19 +326,26 @@ button{
     }
     .search{
         height: 60px;
+        padding: 7px;
         margin: 36px 0 16px 0;
     }
-    .search__img{
-        width: 20px;
-        height: 20px;
-        margin: 20px 9px 20px 16px;
+    .search__input{
+        font-size: 13px;
+        margin: 9px;
+        padding-left: 29px;
     }
-    .search__input::placeholder, .search__input{
+    .search__input::placeholder{
         font-size:13px;
     }
-    .search__result--no{
+    .search__error{
         font-size: 13px;
-        right: 90px;
+    }
+    .search__error--no-result{
+        right: 100px;
+    }
+    .search__error--message{
+        top: 115px;
+        left: 45px;
     }
     .search__btn{
         width: 84px;

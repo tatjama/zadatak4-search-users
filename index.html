@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="light-mode" onLoad="handleLoad()">
   <div class="container">
     <header class="theme-header"> 
       <h1 class="logo">devfinder</h1>
@@ -27,114 +27,26 @@
       <!--End Theme buttons-->
     </header>
     <!--Start Search section-->
-    <section class="search">
-      <div class="search__item search__item--left">
-        <img class="search__img" src="./assets/icon-search.svg" alt="magnifying glass"/>      
-        <input type="search" name="search" class="search__input" autofocus="true" placeholder="Search GitHub username..."/>
-      </div>
-      <div class="search__item search__item--right">
-        <span class="search__result--no">No results</span>
-        <button class="search__btn">Search</button>
-      </div>
-    </section>
+    <form action="#" novalidate="true" preventSubmit="true" autocomplete="off" class="search">
+       <input 
+          type="text" 
+          name="search" 
+          class="search__input" 
+          autofocus="true" 
+          placeholder="Search GitHub username..."
+          autocomplete="off"
+          required 
+          />      
+        <span class="search__error search__error--no-result">No results</span>
+        <input type="submit" class="search__btn" value="Search" >      
+    </form>
+    <span class="search__error search__error--message"></span>
     <!--End search Section-->
-
-    <main class="user-container">
-      <!--Start First User Item-->
-      <header class="user-container__item">
-        <!--Start User Left-->
-        <div class="user__left user__left--first">
-          <img class="user__img" src="./assets/octocat.png" alt="user octocat">
-        </div>
-        <!--End User Left-->
-        <!--Start First User Right-->
-        <div class="user__right user__right--first">
-          <section class="user">        
-            <div class="user__data">
-              <h1 class="user__name">The Octocat</h1>
-              <h3 class="user__login">@octocat</h3>
-            </div>
-            <p class="user__joined">Joined <span class="user__date">25 Jan 2011</span></p>
-          </section> 
-        </div>
-        <!--End First User Right-->
-        </header>
-        <!--End First User Item-->
-        <!--Start Second User Item-->
-        <section class="user-container__item user-container__item--second">
-          <div class="user__left user__left--second"></div>
-          <!--Start Second User Right-->
-          <div class="user__right">
-            <article class="user__bio">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
-              Quisque volutpat mattis eros.
-            </article>
-            <!--Start User Status-->
-            <section class="user__status">
-                <div class="user__item user__item--repos">
-                  <h4>Repos</h4>
-                  <h2 class="user__quantity">8</h2>
-                </div>
-                <div class="user__item user__item--followers">
-                  <h4>Followers</h4>
-                  <h2 class="user__quantity">3938</h2>
-                </div>
-                <div class="user__item user__item--following">
-                  <h4>Following</h4>
-                  <h2 class="user__quantity">9</h2>
-                </div>
-            </section>
-            <!--End User Status-->
-            <!--Start User Social-->
-            <footer class="user-social">
-              <div class="user-social__item">
-                <img class="user-social__img" src="./assets/icon-location.svg" alt="location ">
-                <span>San Francisco</span>
-              </div>
-              <div class="user-social__item user-social__item--transparent">
-                <img class="user-social__img" src="./assets/icon-twitter.svg" alt="twitter ">
-                <span>Not Available</span>
-              </div>
-              <div class="user-social__item">
-                <img class="user-social__img" src="./assets/icon-website.svg" alt="web site ">
-                <a class="user-social__a" href="https://github.blog/">https://github.blog</a>
-              </div>
-              <div class="user-social__item">
-                <img class="user-social__img" src="./assets/icon-company.svg" alt="buildings ">
-                <span>@github</span>
-              </div>
-            </footer>
-            <!--End User Social-->
-          </div>
-          <!--End Second User Right-->
-        </section>
-        <!--End Second User Item-->
-    </main>
-    
-  </div>
-  <script>
-    /*Change Color Theme*/
-  const r = document.querySelector(":root"); 
- function changeTheme(){    
-  r.style.setProperty("--primary-text", "#ffffff");
-  r.style.setProperty("--primary-text-neutral", "#ffffff");
-  r.style.setProperty("--primary-text-bold", "#ffffff");
-  r.style.setProperty("--primary-background", "#141d2f");
-  r.style.setProperty("--primary-background-light", "#1E2A47");
-  r.style.setProperty("--primary-filter", "brightness(380%)");
-  document.querySelector(".theme--light").style.display ="block";
-  document.querySelector(".theme--dark").style.display="none";  
-  }
-  function changeToLight(){
-    r.style.setProperty("--primary-text", "initial");
-  r.style.setProperty("--primary-text-neutral", "initial");
-  r.style.setProperty("--primary-text-bold", "initial");
-  r.style.setProperty("--primary-background", "initial");
-  r.style.setProperty("--primary-background-light", "initial");
-  r.style.setProperty("--primary-filter", "initial");
-  document.querySelector(".theme--light").style.display ="none";
-  document.querySelector(".theme--dark").style.display="block";
-  }
-  /*End Change Color Theme*/
-  </script>
+    <div class="main"></div>    
+    <!--Place to Render Template-->
+  </span>
 </body>
+<script type="text/javascript" src="./js/app.js"></script>
+<script type="text/javascript" src="./js/renderTemplate.js"></script>
+<script type="text/javascript" src="./js/colorTheme.js"></script>
 </html>
