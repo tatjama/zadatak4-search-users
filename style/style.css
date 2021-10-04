@@ -5,7 +5,12 @@
     --primary-text-bold: #2B3442;
     --primary-background: #F6F8FF;
     --primary-background-light: #FEFEFE;
-    --primary-text-error: #F74646;   
+    --primary-text-error: #F74646;
+    --secondary-text: #FFFFFF;
+    --secondary-text-bold: #FFFFFF;
+    --secondary-text-neutral: #FFFFFF;
+    --secondary-background: #141d2f;
+    --secondary-background-light: #1E2A47; 
 }
 *{
     margin: 0;

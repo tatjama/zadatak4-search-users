@@ -16,11 +16,11 @@
     <header class="theme-header"> 
       <h1 class="logo">devfinder</h1>
       <!--Start Theme buttons-->
-      <button class="theme theme--light" >
+      <button class="theme theme--light" onclick="changeToLight()">
         Light
         <img src="./assets/icon-sun.svg" alt="sun"/>
       </button>
-      <button class="theme theme--dark" >
+      <button class="theme theme--dark" onclick="changeTheme()">
         Dark
         <img src="./assets/icon-moon.svg" alt="moon"/>
       </button>
@@ -111,6 +111,28 @@
     </main>
     
   </div>
-  
+  <script>
+    /*Change Color Theme*/
+  const r = document.querySelector(":root"); 
+ function changeTheme(){    
+  r.style.setProperty("--primary-text", "#ffffff");
+  r.style.setProperty("--primary-text-neutral", "#ffffff");
+  r.style.setProperty("--primary-text-bold", "#ffffff");
+  r.style.setProperty("--primary-background", "#141d2f");
+  r.style.setProperty("--primary-background-light", "#1E2A47");
+  document.querySelector(".theme--light").style.display ="block";
+  document.querySelector(".theme--dark").style.display="none";  
+  }
+  function changeToLight(){
+    r.style.setProperty("--primary-text", "initial");
+  r.style.setProperty("--primary-text-neutral", "initial");
+  r.style.setProperty("--primary-text-bold", "initial");
+  r.style.setProperty("--primary-background", "initial");
+  r.style.setProperty("--primary-background-light", "initial");
+  document.querySelector(".theme--light").style.display ="none";
+  document.querySelector(".theme--dark").style.display="block";
+  }
+  /*End Change Color Theme*/
+  </script>
 </body>
 </html>
