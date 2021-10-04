@@ -1,11 +1,13 @@
 :root{
     --primary-blue: #0079FF;
+    --primary-blue-hover: #60ABFF;
     --primary-text:#4B6A9B;       
     --primary-text-neutral: #697C9A;
     --primary-text-bold: #2B3442;
     --primary-background: #F6F8FF;
     --primary-background-light: #FEFEFE;
-    --primary-text-error: #F74646;
+    --primary-text-error: #F74646;   
+    --primary-filter: brightness(100%);
     --secondary-text: #FFFFFF;
     --secondary-text-bold: #FFFFFF;
     --secondary-text-neutral: #FFFFFF;
@@ -88,11 +90,19 @@ button{
 .theme--dark{
     color: var(--primary-text-neutral);
 }
+.theme--dark:hover{
+ filter: brightness(0) saturate(100%) invert(20%) sepia(15%) saturate(792%) hue-rotate(177deg) brightness(95%) contrast(98%);
+ -webkit-filter: brightness(0) saturate(100%) invert(20%) sepia(15%) saturate(792%) hue-rotate(177deg) brightness(95%) contrast(98%);
+}
 .theme--dark{
     /*display: none;*/
 }
 .theme--light{
     color: white;
+}
+.theme--light:hover{
+    filter:  invert(43%) sepia(15%) saturate(1314%) hue-rotate(178deg) brightness(90%) contrast(98%);
+    -webkit-filter:  invert(43%) sepia(15%) saturate(1314%) hue-rotate(178deg) brightness(90%) contrast(98%);
 }
 .theme--light{
     display: none;
@@ -170,6 +180,9 @@ button{
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+}
+.search__btn:hover{
+    background-color: var(--primary-blue-hover);
 }
 /*End Search section*/
 /*Start User Containers*/
