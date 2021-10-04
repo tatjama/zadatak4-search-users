@@ -273,3 +273,37 @@ button{
     -webkit-filter:var(--primary-filter);
 }
 /*End User Container*/
+@media screen and (max-width:800px){
+    .container{
+        width: 75%;        
+    }
+    .search__item--left{
+        width: 75%;
+    }
+    .search__input{
+        width: 75%;
+    }
+    .search__result--no{
+        margin: 0;
+        position: absolute;
+        right: 120px;
+    }
+    .user-container{
+        padding: 7%;
+    }
+    .user__right{
+        width: 100%;
+    }
+    .user__right--first{
+        width: 60%;
+    }
+    .user{
+        flex-direction: column;
+    }
+    .user-container__item--second{
+        margin-top: 12px;
+    }
+    .user__left--second{
+        width:0;
+    }
+}
