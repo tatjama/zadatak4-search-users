@@ -28,10 +28,10 @@
   2. if no validate - not fetch and show error message
   3. if no user -  show error message
   4. if user - render profile page 
-      a. If a GitHub user hasn't added their name, show their username where the name would be    without the `@` symbol
-      b. If a GitHub user's bio is empty, show the text "This profile has no bio" with transparency added.
-      c. If any of the location, website, twitter, or company properties are empty, show the text "Not Available" with transparency added.
-      d. Website, twitter, and company information are links to those resources.
+      - If a GitHub user hasn't added their name, show their username where the name would be    without the `@` symbol
+      - If a GitHub user's bio is empty, show the text "This profile has no bio" with transparency added.
+      - If any of the location, website, twitter, or company properties are empty, show the text "Not Available" with transparency added.
+      - Website, twitter, and company information are links to those resources.      
 
 - Display an error messages:
   1. "No results" - if no user is found when a new search is made.
