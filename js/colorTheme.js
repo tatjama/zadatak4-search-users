@@ -1,14 +1,26 @@
-  /*Start Change Color Theme*/
-  function changeTheme(){    
-      document.querySelector("body").classList.add("dark-mode");
-      document.querySelector("body").classList.remove("light-mode");
-      document.querySelector(".theme--light").style.display ="block";
-      document.querySelector(".theme--dark").style.display="none"; 
-  }
-  function changeToLight(){
-      document.querySelector("body").classList.remove("dark-mode");
-      document.querySelector("body").classList.add("light-mode");
-      document.querySelector(".theme--light").style.display ="none";
-      document.querySelector(".theme--dark").style.display="block";
-  }
-  /*End Change Color Theme*/
+const themeContainer = document.querySelector(".theme-container");
+const body = document.querySelector("body");
+const light = `<button class="theme theme--light" onclick="changeToLight()">
+    Light
+    <img src="./assets/icon-sun.svg" alt="sun"/>
+  </button>`
+const dark = `
+<button class="theme theme--dark" onclick="changeToDark()">
+    Dark
+    <img src="./assets/icon-moon.svg" alt="moon"/>
+  </button>
+`
+
+const changeToDark = () => {    
+body.classList.add("dark-mode");
+body.classList.remove("light-mode");
+themeContainer.innerHTML  = light;
+}
+const changeToLight = () => {
+body.classList.remove("dark-mode");
+body.classList.add("light-mode");
+themeContainer.innerHTML =dark;
+}
+const userPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+  
+themeContainer.innerHTML = userPrefersLight? dark: light;

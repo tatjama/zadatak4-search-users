@@ -102,9 +102,9 @@ button{
  filter: brightness(0) saturate(100%) invert(20%) sepia(15%) saturate(792%) hue-rotate(177deg) brightness(95%) contrast(98%);
  -webkit-filter: brightness(0) saturate(100%) invert(20%) sepia(15%) saturate(792%) hue-rotate(177deg) brightness(95%) contrast(98%);
 }
-.theme--dark{
-    /*display: none;*/
-}
+/*.theme--dark{
+    display: none;
+}*/
 .theme--light{
     color: white;
 }
@@ -112,9 +112,9 @@ button{
     filter:  invert(43%) sepia(15%) saturate(1314%) hue-rotate(178deg) brightness(90%) contrast(98%);
     -webkit-filter:  invert(43%) sepia(15%) saturate(1314%) hue-rotate(178deg) brightness(90%) contrast(98%);
 }
-.theme--light{
+/*.theme--light{
     display: none;
-}
+}*/
 
 /*End Theme Header*/
 /*Start Search section*/
