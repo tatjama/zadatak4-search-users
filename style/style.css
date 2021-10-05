@@ -135,6 +135,7 @@ button{
     -o-border-radius:15px;
 }
 .search__input{
+    width: 80%;
     padding: 2px;
     padding-left: 45px;
     margin: 22px;
