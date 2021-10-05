@@ -1,4 +1,6 @@
 const renderUserData = (data) => { 
+  let arrayOfCompany;
+    if(data.company) arrayOfCompany = data.company.split(',');
     main.innerHTML = `
     <main class="user-container">
       <!--Start First User Item-->
@@ -54,7 +56,7 @@ const renderUserData = (data) => {
               <div class="user-social__item ${!data.twitter_username && "user-social__item--transparent"}">
                 <img class="user-social__img" src="./assets/icon-twitter.svg" alt="twitter ">
                 <a class="user-social__a" 
-                  href=${data.twitter_username? "https://twitter.com/" + data.twitter_username.slice(1): "#"} 
+                  href=${data.twitter_username? "https://twitter.com/" + data.twitter_username: "#"} 
                   target =${(!data.twitter_username)? "" : "_blank"}>
                   ${data.twitter_username? data.twitter_username: "Not Available"}
                 </a>
@@ -68,12 +70,16 @@ const renderUserData = (data) => {
                 </a>
               </div>
               <div class="user-social__item ${!data.company && "user-social__item--transparent"}">
-                <img class="user-social__img" src="./assets/icon-company.svg" alt="buildings ">                
-                <a class="user-social__a" 
-                  href=${data.company? "https://github.com/" + data.company.slice(1): "#"} 
-                  target =${(!data.company)? "" : "_blank"}>
-                  ${data.company? data.company: "Not Available"}
-                </a>
+                <img class="user-social__img" src="./assets/icon-company.svg" alt="buildings ">  
+                ${(data.company)? arrayOfCompany.map((company) =>{
+                  company = company.trim();
+                  return `<a class="user-social__a" 
+                            href="https://github.com/${company.slice(1)}" 
+                            target="_blank">
+                            ${company}
+                          </a><br>`
+                }
+                  ): "Not Available"}                
               </div>
             </footer>
             <!--End User Social-->
@@ -84,4 +90,3 @@ const renderUserData = (data) => {
     </main>
     `;  
   }
- 
