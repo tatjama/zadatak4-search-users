@@ -3,24 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta author="Tatjana Markovic"/>
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  <title></title>
+  <title>Dev Finder | Search GitHub Users </title>
+  <link rel="stylesheet" href="./style/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
-
-  devfinder
-
-  Light
-  Dark
-
-  Search GitHub username...
-  Search
-
-  Joined
-
-  Repos
-  Followers
-  Following
-
+<body class="light-mode" onLoad="handleLoad()">
+  
+  <div class="container">
+    <header class="theme-header"> 
+      <h1 class="logo">devfinder</h1>
+      <!--Start Theme buttons-->
+      <div class="theme-container">
+        <button class="theme theme--dark" onclick="changeToDark()">
+          Dark
+          <img src="./assets/icon-moon.svg" alt="moon"/>
+        </button>
+      </div>    
+      <!--End Theme buttons-->
+    </header>
+    <!--Start Search section-->
+    <form action="#" novalidate="true" preventSubmit="true" autocomplete="off" class="search">
+       <input 
+          type="text" 
+          name="search" 
+          class="search__input" 
+          autofocus="true" 
+          placeholder="Search GitHub username..."
+          autocomplete="off"
+          required 
+          />      
+        <span class="search__error search__error--no-result">No results</span>
+        <input type="submit" class="search__btn" value="Search" >      
+    </form>
+    <span class="search__error search__error--message"></span>
+    <!--End search Section-->
+    <div class="main">
+      <!--Keep place for User Container-->
+      <div class="main__starter"></div>
+    </div>    
+    <!--Place to Render Template-->
+  </span>
 </body>
+<script type="text/javascript" src="./js/app.js"></script>
+<script type="text/javascript" src="./js/renderTemplate.js"></script>
+<script type="text/javascript" src="./js/colorTheme.js"></script>
 </html>
