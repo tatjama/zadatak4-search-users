@@ -21,6 +21,6 @@ body.classList.remove("dark-mode");
 body.classList.add("light-mode");
 themeContainer.innerHTML =dark;
 }
-const userPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-  
+let userPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+if(!userPrefersLight){body.classList.add("dark-mode")};
 themeContainer.innerHTML = userPrefersLight? dark: light;
