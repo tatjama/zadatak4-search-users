@@ -33,17 +33,17 @@ const renderUserData = (data) => {
             </article>
             <!--Start User Status-->
             <section class="user__status">
-                <div class="user__item user__item--repos">
+                <div class="user__item">
                   <h4>Repos</h4>
-                  <h2 class="user__quantity">${data.public_repos}</h2>
+                  <h2>${data.public_repos}</h2>
                 </div>
-                <div class="user__item user__item--followers">
+                <div class="user__item">
                   <h4>Followers</h4>
-                  <h2 class="user__quantity">${data.followers}</h2>
+                  <h2>${data.followers}</h2>
                 </div>
-                <div class="user__item user__item--following">
+                <div class="user__item">
                   <h4>Following</h4>
-                  <h2 class="user__quantity">${data.following}</h2>
+                  <h2>${data.following}</h2>
                 </div>
             </section>
             <!--End User Status-->
@@ -55,19 +55,21 @@ const renderUserData = (data) => {
               </div>
               <div class="user-social__item ${!data.twitter_username && "user-social__item--transparent"}">
                 <img class="user-social__img" src="./assets/icon-twitter.svg" alt="twitter ">
-                <a class="user-social__a" 
-                  href=${data.twitter_username? "https://twitter.com/" + data.twitter_username: "#"} 
-                  target =${(!data.twitter_username)? "" : "_blank"}>
-                  ${data.twitter_username? data.twitter_username: "Not Available"}
-                </a>
+               ${(data.twitter_username)? `
+                  <a class="user-social__a" 
+                    href="https://twitter.com/${data.twitter_username}"  
+                    target="_blank">
+                    ${data.twitter_username}
+                  </a>`: "Not Available"}                
               </div>
               <div class="user-social__item ${!data.blog && "user-social__item--transparent"}">
                 <img class="user-social__img" src="./assets/icon-website.svg" alt="web site ">
-                <a class="user-social__a" 
-                  href=${data.blog? data.blog: "#"} 
-                  target =${(data.blog) && "_blank"}>
-                  ${data.blog? data.blog: "Not Available"}
-                </a>
+                  ${(data.blog)?`
+                    <a class="user-social__a" 
+                      href=${data.blog} 
+                      target ="_blank">
+                      ${data.blog}
+                    </a> `: "Not Available"}
               </div>
               <div class="user-social__item ${!data.company && "user-social__item--transparent"}">
                 <img class="user-social__img" src="./assets/icon-company.svg" alt="buildings ">  
@@ -77,9 +79,8 @@ const renderUserData = (data) => {
                             href="https://github.com/${company.slice(1)}" 
                             target="_blank">
                             ${company}
-                          </a><br>`
-                }
-                  ): "Not Available"}                
+                          </a><br>&nbsp`})
+                          : "Not Available"}                
               </div>
             </footer>
             <!--End User Social-->
